@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { ScrollView, View, StyleSheet, ImageBackground, Text, TouchableOpacity ,KeyboardAvoidingView } from 'react-native';
-import TextInputComponent from '../Components/TextInput';
+import { useNavigation } from '@react-navigation/native';
 import Btn from '../Components/Button';
 import PhoneInput from 'react-native-phone-number-input';
 
 
 const LoginScreen = () => {
   const[value,setValue] = useState();
+
+  const navigation = useNavigation();
+
+  const handleRegister =() =>{
+    navigation.navigate('Register')
+  }
 
   return (
     <ImageBackground source={require('../assets/Background.png')} style={styles.imageBackground}>
@@ -25,9 +31,9 @@ const LoginScreen = () => {
         fontSize={22}
       /> */}
 
-<View >
+<View style={styles.phoneInputContainer}>
         <PhoneInput
-        style={styles.phoneInputContainer}
+        
             placeholder="Phone Number"
             value={value}
             onChange={setValue}
@@ -52,6 +58,7 @@ const LoginScreen = () => {
       <Btn
       Style={styles.button}
         text="Register"
+        onPress={handleRegister}
       />
       </ScrollView>
       </KeyboardAvoidingView>
@@ -82,10 +89,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   phoneInputContainer:{
-    marginTop: '30%',
-    alignItems:'center',
-    backgroundColor:'white',
-    borderRadius: 50,
+    marginTop: '10%',
+    borderRadius: 30, 
+    overflow: 'hidden', 
   },
   phoneInputText:{
     opacity:0.5,

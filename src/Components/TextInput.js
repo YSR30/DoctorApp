@@ -7,6 +7,7 @@ const TextInputComponent = ({ placeholder, value, onChangeText, secureTextEntry 
         style={styles.input}
         placeholder={placeholder}
         value={value}
+        placeholderTextColor='#FFFFFF'
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
         autoCapitalize="none"
@@ -21,12 +22,12 @@ const styles = StyleSheet.create({
   },
   input: {
     color: '#FFFFFF',
-    marginVertical: '5%',
-   width: '95%',
+    marginVertical: '3%',
+   width: '90%',
    borderRadius: 50,
    backgroundColor: '#C4C4C4',
    padding: '4%',
- marginLeft: 10 ,
+ marginLeft: 20 ,
  opacity: 0.5,
  fontSize: 20,
   },
